@@ -1,0 +1,11 @@
+query,model,precision,recall,f1,MAP,MRR
+intelligence artificielle,TF-IDF,0.2,0.6666666666666666,0.30769230769230765,0.42857142857142855,1.0
+réchauffement climatique,TF-IDF,0.25,1.0,0.4,1.0,1.0
+blockchain,TF-IDF,0.0,0.0,0.0,0.0,0.0
+apprentissage profond,TF-IDF,0.2,1.0,0.33333333333333337,1.0,1.0
+cybersécurité,TF-IDF,0.2,1.0,0.33333333333333337,1.0,1.0
+intelligence artificielle,BM25,0.3,1.0,0.4615384615384615,0.5666666666666667,1.0
+réchauffement climatique,BM25,0.25,1.0,0.4,1.0,1.0
+blockchain,BM25,1.0,1.0,1.0,1.0,1.0
+apprentissage profond,BM25,0.2,1.0,0.33333333333333337,1.0,1.0
+cybersécurité,BM25,0.2,1.0,0.33333333333333337,1.0,1.0

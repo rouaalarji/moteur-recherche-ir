@@ -1,0 +1,111 @@
+model,query,recall,precision
+TF-IDF,intelligence artificielle,0.0,1.0
+TF-IDF,intelligence artificielle,0.1,1.0
+TF-IDF,intelligence artificielle,0.2,1.0
+TF-IDF,intelligence artificielle,0.3,1.0
+TF-IDF,intelligence artificielle,0.4,0.5
+TF-IDF,intelligence artificielle,0.5,0.5
+TF-IDF,intelligence artificielle,0.6,0.5
+TF-IDF,intelligence artificielle,0.7,0.375
+TF-IDF,intelligence artificielle,0.8,0.375
+TF-IDF,intelligence artificielle,0.9,0.375
+TF-IDF,intelligence artificielle,1.0,0.375
+TF-IDF,réchauffement climatique,0.0,1.0
+TF-IDF,réchauffement climatique,0.1,1.0
+TF-IDF,réchauffement climatique,0.2,1.0
+TF-IDF,réchauffement climatique,0.3,1.0
+TF-IDF,réchauffement climatique,0.4,1.0
+TF-IDF,réchauffement climatique,0.5,1.0
+TF-IDF,réchauffement climatique,0.6,0.0
+TF-IDF,réchauffement climatique,0.7,0.0
+TF-IDF,réchauffement climatique,0.8,0.0
+TF-IDF,réchauffement climatique,0.9,0.0
+TF-IDF,réchauffement climatique,1.0,0.0
+TF-IDF,blockchain,0.0,0.0
+TF-IDF,blockchain,0.1,0.0
+TF-IDF,blockchain,0.2,0.0
+TF-IDF,blockchain,0.3,0.0
+TF-IDF,blockchain,0.4,0.0
+TF-IDF,blockchain,0.5,0.0
+TF-IDF,blockchain,0.6,0.0
+TF-IDF,blockchain,0.7,0.0
+TF-IDF,blockchain,0.8,0.0
+TF-IDF,blockchain,0.9,0.0
+TF-IDF,blockchain,1.0,0.0
+TF-IDF,apprentissage profond,0.0,1.0
+TF-IDF,apprentissage profond,0.1,1.0
+TF-IDF,apprentissage profond,0.2,1.0
+TF-IDF,apprentissage profond,0.3,1.0
+TF-IDF,apprentissage profond,0.4,1.0
+TF-IDF,apprentissage profond,0.5,1.0
+TF-IDF,apprentissage profond,0.6,1.0
+TF-IDF,apprentissage profond,0.7,1.0
+TF-IDF,apprentissage profond,0.8,1.0
+TF-IDF,apprentissage profond,0.9,1.0
+TF-IDF,apprentissage profond,1.0,1.0
+TF-IDF,cybersécurité,0.0,1.0
+TF-IDF,cybersécurité,0.1,1.0
+TF-IDF,cybersécurité,0.2,1.0
+TF-IDF,cybersécurité,0.3,1.0
+TF-IDF,cybersécurité,0.4,1.0
+TF-IDF,cybersécurité,0.5,1.0
+TF-IDF,cybersécurité,0.6,1.0
+TF-IDF,cybersécurité,0.7,1.0
+TF-IDF,cybersécurité,0.8,1.0
+TF-IDF,cybersécurité,0.9,1.0
+TF-IDF,cybersécurité,1.0,1.0
+BM25,intelligence artificielle,0.0,1.0
+BM25,intelligence artificielle,0.1,1.0
+BM25,intelligence artificielle,0.2,1.0
+BM25,intelligence artificielle,0.3,1.0
+BM25,intelligence artificielle,0.4,0.42857142857142855
+BM25,intelligence artificielle,0.5,0.42857142857142855
+BM25,intelligence artificielle,0.6,0.42857142857142855
+BM25,intelligence artificielle,0.7,0.42857142857142855
+BM25,intelligence artificielle,0.8,0.42857142857142855
+BM25,intelligence artificielle,0.9,0.42857142857142855
+BM25,intelligence artificielle,1.0,0.42857142857142855
+BM25,réchauffement climatique,0.0,1.0
+BM25,réchauffement climatique,0.1,1.0
+BM25,réchauffement climatique,0.2,1.0
+BM25,réchauffement climatique,0.3,1.0
+BM25,réchauffement climatique,0.4,1.0
+BM25,réchauffement climatique,0.5,1.0
+BM25,réchauffement climatique,0.6,0.0
+BM25,réchauffement climatique,0.7,0.0
+BM25,réchauffement climatique,0.8,0.0
+BM25,réchauffement climatique,0.9,0.0
+BM25,réchauffement climatique,1.0,0.0
+BM25,blockchain,0.0,1.0
+BM25,blockchain,0.1,1.0
+BM25,blockchain,0.2,1.0
+BM25,blockchain,0.3,1.0
+BM25,blockchain,0.4,1.0
+BM25,blockchain,0.5,1.0
+BM25,blockchain,0.6,1.0
+BM25,blockchain,0.7,1.0
+BM25,blockchain,0.8,1.0
+BM25,blockchain,0.9,1.0
+BM25,blockchain,1.0,1.0
+BM25,apprentissage profond,0.0,1.0
+BM25,apprentissage profond,0.1,1.0
+BM25,apprentissage profond,0.2,1.0
+BM25,apprentissage profond,0.3,1.0
+BM25,apprentissage profond,0.4,1.0
+BM25,apprentissage profond,0.5,1.0
+BM25,apprentissage profond,0.6,1.0
+BM25,apprentissage profond,0.7,1.0
+BM25,apprentissage profond,0.8,1.0
+BM25,apprentissage profond,0.9,1.0
+BM25,apprentissage profond,1.0,1.0
+BM25,cybersécurité,0.0,1.0
+BM25,cybersécurité,0.1,1.0
+BM25,cybersécurité,0.2,1.0
+BM25,cybersécurité,0.3,1.0
+BM25,cybersécurité,0.4,1.0
+BM25,cybersécurité,0.5,1.0
+BM25,cybersécurité,0.6,1.0
+BM25,cybersécurité,0.7,1.0
+BM25,cybersécurité,0.8,1.0
+BM25,cybersécurité,0.9,1.0
+BM25,cybersécurité,1.0,1.0
