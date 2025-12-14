@@ -55,14 +55,14 @@ def search(query: str, top_k: int = 5, model: str = "tfidf"):
     tfidf_matrix = index_data.get("tfidf")
     tokenized_docs = index_data.get("tokenized_docs")
     bm25 = index_data.get("bm25")
-
+    #Transforme la requête en minuscules, supprime la ponctuation et les espaces multiples.
     clean_query = normalize_text(query)
 
     results = []
 
     # ---------------- TF-IDF ---------------- #
     if model == "tfidf":
-        query_vec = vectorizer.transform([clean_query])
+        query_vec = vectorizer.transform([clean_query]) #transforme la requête en vecteur TF-IDF
         scores = cosine_similarity(query_vec, tfidf_matrix).flatten()
 
         ranked_indices = np.argsort(scores)[::-1][:top_k]

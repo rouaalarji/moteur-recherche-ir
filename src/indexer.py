@@ -16,7 +16,7 @@ from nltk.corpus import stopwords
 try:
     french_stopwords = set(stopwords.words('french'))
 except LookupError:
-    print("📥 Téléchargement des stopwords NLTK...")
+    print(" Téléchargement des stopwords NLTK...")
     nltk.download('stopwords')
     french_stopwords = set(stopwords.words('french'))
 
@@ -27,14 +27,14 @@ DOCS_DIR = os.path.join(DATA_DIR, "documents")
 INDEX_PATH = os.path.join(DATA_DIR, "index.pkl")
 META_PATH = os.path.join(DATA_DIR, "meta.pkl")
 
-# ==========================================
-# FONCTIONS
-# ==========================================
+#FONCTIONS: 1. Préparation des données
 
 def normalize_text(text: str) -> str:
     """Nettoie et normalise le texte"""
     text = text.lower()
+    #supprimer ponctuation
     text = re.sub(r"[^\w\sàâçéèêëîïôûùüÿœ]", " ", text)
+    #supprimer espace multiple
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
@@ -51,7 +51,7 @@ def load_documents():
     
     files = sorted([f for f in os.listdir(DOCS_DIR) if f.endswith(".json")])
     
-    print(f"📁 Chargement de {len(files)} documents...")
+    print(f"Chargement de {len(files)} documents...")
     
     for fname in files:
         fpath = os.path.join(DOCS_DIR, fname)
@@ -62,7 +62,7 @@ def load_documents():
             
             content = d.get("content", "")
             if len(content.strip()) == 0:
-                print(f"⚠️  Document vide ignoré: {fname}")
+                print(f" Document vide ignoré: {fname}")
                 continue
             
             # Nettoyage
@@ -76,25 +76,25 @@ def load_documents():
             })
             
         except Exception as e:
-            print(f"❌ Erreur lecture {fname}: {e}")
+            print(f" Erreur lecture {fname}: {e}")
     
-    print(f"✅ {len(docs)} documents chargés\n")
+    print(f" {len(docs)} documents chargés\n")
     return docs, meta
 
 def build_tfidf_index(docs):
     """Construit l'index TF-IDF"""
-    print("🔨 Construction de l'index TF-IDF...")
+    print(" Construction de l'index TF-IDF...")
     
     vectorizer = TfidfVectorizer(
         stop_words=list(french_stopwords),
-        max_df=0.9,
-        min_df=2,
-        ngram_range=(1, 2)
+        max_df=0.9, # Ignore termes dans >90% des docs (trop fréquents)
+        min_df=2, # Ignore termes dans <2 docs (trop rares)
+        ngram_range=(1, 2) # Unigrammes (1 mot) + bigrammes (2 mots)
     )
-    
+     # Transforme les documents en matrice TF-IDF
     tfidf_matrix = vectorizer.fit_transform(docs)
     
-    print(f"✅ Index TF-IDF créé:")
+    print(f" Index TF-IDF créé:")
     print(f"   • Termes uniques: {len(vectorizer.get_feature_names_out()):,}")
     print(f"   • Taille matrice: {tfidf_matrix.shape}\n")
     
@@ -102,12 +102,12 @@ def build_tfidf_index(docs):
 
 def build_bm25_index(docs):
     """Construit l'index BM25"""
-    print("🚀 Construction de l'index BM25...")
+    print(" Construction de l'index BM25...")
     
     tokenized_docs = [tokenize(d) for d in docs]
-    bm25 = BM25Okapi(tokenized_docs)
+    bm25 = BM25Okapi(tokenized_docs) #creation de index
     
-    print(f"✅ Index BM25 créé:")
+    print(f" Index BM25 créé:")
     print(f"   • Documents tokenisés: {len(tokenized_docs)}")
     print(f"   • Moyenne tokens/doc: {sum(len(d) for d in tokenized_docs) / len(tokenized_docs):.1f}\n")
     
@@ -115,7 +115,7 @@ def build_bm25_index(docs):
 
 def save_index(vectorizer, tfidf_matrix, bm25, tokenized_docs, meta):
     """Sauvegarde l'index complet"""
-    print("💾 Sauvegarde de l'index...")
+    print("Sauvegarde de l'index...")
     
     # Sauvegarder l'index
     index_data = {
@@ -132,12 +132,10 @@ def save_index(vectorizer, tfidf_matrix, bm25, tokenized_docs, meta):
     with open(META_PATH, "wb") as f:
         pickle.dump(meta, f)
     
-    print(f"✅ Index sauvegardé: {INDEX_PATH}")
-    print(f"✅ Métadonnées sauvegardées: {META_PATH}\n")
+    print(f" Index sauvegardé: {INDEX_PATH}")
+    print(f"Métadonnées sauvegardées: {META_PATH}\n")
 
-# ==========================================
 # PROGRAMME PRINCIPAL
-# ==========================================
 
 def main():
     """Fonction principale"""
@@ -147,7 +145,7 @@ def main():
     
     # Vérifier que le dossier documents existe
     if not os.path.exists(DOCS_DIR):
-        print(f"❌ Dossier introuvable: {DOCS_DIR}")
+        print(f" Dossier introuvable: {DOCS_DIR}")
         print("   Exécutez d'abord crawler.py pour collecter les documents")
         return
     
@@ -155,7 +153,7 @@ def main():
     docs, meta = load_documents()
     
     if len(docs) < 10:
-        print("⚠️  Moins de 10 documents trouvés")
+        print("  Moins de 10 documents trouvés")
         print("   Exécutez crawler.py pour collecter plus de documents")
     
     # Construire TF-IDF
@@ -164,9 +162,9 @@ def main():
     # Construire BM25
     try:
         bm25, tokenized_docs = build_bm25_index(docs)
-        print("✅ BM25 disponible dans l'interface web\n")
+        print(" BM25 disponible dans l'interface web\n")
     except Exception as e:
-        print(f"⚠️  Erreur BM25: {e}")
+        print(f"  Erreur BM25: {e}")
         print("   Installez: pip install rank-bm25")
         print("   L'index sera créé sans BM25\n")
         bm25 = None
@@ -176,8 +174,8 @@ def main():
     save_index(vectorizer, tfidf_matrix, bm25, tokenized_docs, meta)
     
     
-    print(f"📊 Documents indexés: {len(docs)}")
-    print(f"📝 Termes uniques: {len(vectorizer.get_feature_names_out()):,}")
+    print(f" Documents indexés: {len(docs)}")
+    print(f" Termes uniques: {len(vectorizer.get_feature_names_out()):,}")
   
     
 

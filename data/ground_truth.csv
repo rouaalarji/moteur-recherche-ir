@@ -1,6 +1,36 @@
 query,doc_ids
-intelligence artificielle,"1;7;14"
-réchauffement climatique,"25;26"
-blockchain,"12"
-apprentissage profond,"7;15"
-cybersécurité,"11"
+intelligence artificielle,1;7;14;59
+machine learning,2;59
+big data,3
+algorithme,4
+moteur de recherche,5
+tf-idf,6
+apprentissage profond,7;15
+deep learning,7;15
+index inverse,8
+cloud computing,10
+cybersécurité,11
+blockchain,12
+internet des objets,13
+réseau neuronal,14;7
+physique quantique,16
+chimie organique,17
+biologie cellulaire,18
+génétique,19
+coronavirus,20
+vaccin,21
+diabète,22
+médecine,23
+neurosciences,24
+climat,25;26
+réchauffement climatique,25;26
+économie,27
+finance,28
+e-commerce,29
+marketing,30
+entrepreneuriat,31
+inflation,33
+histoire,35
+art,36
+littérature,37
+musique,38
