@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 """
 Module d'indexation avec support TF-IDF et BM25
-Compatible avec app.py et evaluator.py
 """
 import os
 import json

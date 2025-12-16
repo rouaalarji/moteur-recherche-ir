@@ -2,7 +2,6 @@
 Module d'évaluation 
 - Métriques de base: Précision, Rappel, F1
 - Comparaison TF-IDF vs BM25
-- Sans MAP, MRR et courbes P-R
 """
 import os
 import csv

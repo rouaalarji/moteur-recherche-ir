@@ -1,3 +1,4 @@
+#moteur de recherche utilisant tf et bm25 pour retrouver les documents les plus pertinents pour une requête
 import os
 import pickle
 import re

@@ -137,7 +137,23 @@ Métriques calculées:
 Précision (P)	:Proportion de résultats corrects parmi ceux retournés
 Rappel (R):	Proportion des documents pertinents retrouvés
 F1-Score:	Moyenne harmonique entre précision et rappel
-Average Precision (AP):	Qualité du ranking sur toute la liste
-Mean Reciprocal Rank (MRR)	:Position du premier document pertinent
-Courbe Précision-Rappel interpolée :	Vue globale de la performance selon différents niveaux de rappel
 
+Structure du projet:
+moteur-recherche-ir/
+│
+├── src/                       
+│    crawler.py             # Collecte des documents
+│    indexer.py             # Indexation TF-IDF & BM25
+│    search_engine.py       # Moteur de recherche CLI
+│    app.py                 # Interface web Flask
+│    evaluator.py           # Évaluation des performances
+│
+├── data/                       # Données
+│    documents/             # Documents collectés (JSON)
+│    index.pkl              # Index TF-IDF & BM25
+│    meta.pkl               # Métadonnées
+│    ground_truth.csv       # Vérité terrain
+│   
+├── requirements.txt           # Dépendances Python
+├── README.md                  # Ce fichier
+└── LICENSE                    # Licence MIT
