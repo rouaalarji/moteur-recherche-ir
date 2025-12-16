@@ -28,7 +28,7 @@ def normalize_text(text: str) -> str:
 def generate_corpus_statistics():
     """Génère les statistiques du corpus"""
     print("\n" + "="*80)
-    print(" "*25 + "📊 STATISTIQUES DU CORPUS")
+    print(" "*25 + " STATISTIQUES DU CORPUS")
     print("="*80 + "\n")
     
     # Charge les documents
@@ -39,7 +39,7 @@ def generate_corpus_statistics():
     all_tokens = []
     categories = Counter()
     
-    print("📂 Analyse des documents...\n")
+    print(" Analyse des documents...\n")
     
     for fname in files:
         fpath = os.path.join(DOCS_DIR, fname)
@@ -77,7 +77,7 @@ def generate_corpus_statistics():
             total_docs += 1
             
         except Exception as e:
-            print(f"❌ Erreur: {fname} - {e}")
+            print(f" Erreur: {fname} - {e}")
     
     # Calculs
     unique_tokens = len(set(all_tokens))
@@ -92,11 +92,11 @@ def generate_corpus_statistics():
     print("="*80)
     print("STATISTIQUES GÉNÉRALES")
     print("="*80)
-    print(f"📚 Nombre total de documents       : {total_docs}")
-    print(f"📝 Nombre total de mots            : {total_words:,}")
-    print(f"📊 Moyenne de mots par document    : {avg_words:,.1f}")
-    print(f"🔤 Nombre de tokens uniques        : {unique_tokens:,}")
-    print(f"📈 Richesse lexicale               : {richness:.2f}%")
+    print(f" Nombre total de documents       : {total_docs}")
+    print(f" Nombre total de mots            : {total_words:,}")
+    print(f" Moyenne de mots par document    : {avg_words:,.1f}")
+    print(f" Nombre de tokens uniques        : {unique_tokens:,}")
+    print(f" Richesse lexicale               : {richness:.2f}%")
     
     print("\n" + "="*80)
     print("RÉPARTITION THÉMATIQUE")
